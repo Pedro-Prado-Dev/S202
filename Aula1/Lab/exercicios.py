@@ -1,4 +1,4 @@
-from classes import Aula, Aluno, Professor
+from Aula1.Lab.classes import Aula, Aluno, Professor
 
 
 professor = Professor("Lucas")
