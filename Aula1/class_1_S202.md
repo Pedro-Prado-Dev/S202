@@ -1,5 +1,3 @@
-# Sem título
-
 # 1.1 O que é NoSQL?
 
 ---
