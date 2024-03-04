@@ -12,4 +12,4 @@ A forma mais facil de explorar e manipular dados do Mongo DB é por meio do clie
 - Possui frande compatibilidade com outros plugins para deixar a ferramenta mais completa quando necessário;
 - Permite o acesso a base de dados locais ou remotas
 
-#MongoDB Query Language(MQL)
+# MongoDB Query Language(MQL)
