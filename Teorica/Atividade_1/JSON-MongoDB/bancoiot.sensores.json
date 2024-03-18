@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "65f8a0cd9f286b271147d665"
+  },
+  "nomeSensor": "Sensor2",
+  "timestamp": {
+    "$date": "2024-03-18T17:23:23.729Z"
+  },
+  "valorSensor": 38.92627091146361,
+  "sensorAlarmado": true
+},
+{
+  "_id": {
+    "$oid": "65f8a0cd9f286b271147d666"
+  },
+  "nomeSensor": "Sensor1",
+  "timestamp": {
+    "$date": "2024-03-18T17:23:31.868Z"
+  },
+  "valorSensor": 38.034698030306146,
+  "sensorAlarmado": true
+},
+{
+  "_id": {
+    "$oid": "65f8a0cd9f286b271147d667"
+  },
+  "nomeSensor": "Sensor3",
+  "timestamp": {
+    "$date": "2024-03-18T17:23:27.793Z"
+  },
+  "valorSensor": 38.88196189532044,
+  "sensorAlarmado": true
+}]
