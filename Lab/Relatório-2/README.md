@@ -5,8 +5,6 @@
 
 Sabemos que os registros são as **unidades básicas de dados** em bancos relacionais. No caso do MongoDB, essas unidades básicas são os documentos, reunidos em coleções de um banco.
 
-![Comparação entre as unidades de dados de bancos relacionais e bancos não relacionais](BSON%20&%20Collection%208fe1d7f107724f1b81c71537446d39af/Untitled.png)
-
 Comparação entre as unidades de dados de bancos relacionais e bancos não relacionais
 
 Esses documentos são estruturados e entendidos pelo MongoDB como **[BSONs](https://www.mongodb.com/json-and-bson)** — *Binary JSON*. Vamos aprender o que é JSON e porque o BSON foi desenvolvido.
@@ -19,9 +17,6 @@ Veremos também as diferenças entre as tabelas (relacionais) e coleções (não
 
 *JavaScript Object Notation*, mais conhecido como JSON, é uma estrutura associativa onde uma chave de texto é associada a um valor. Esse valor pode ser um número, uma string, um array, uma função ou até outro objeto.
 
-![Representação de um documento JSON](BSON%20&%20Collection%208fe1d7f107724f1b81c71537446d39af/Untitled%201.png)
-
-Representação de um documento JSON
 
 Devido a facilidade de representar objetos JavaScript em texto, ser entendível tanto para humanos quanto máquinas e simples de implementar em outras linguagens, o JSON foi escolhido para o modelo de orientação a documentos do MongoDB.
 
@@ -39,19 +34,11 @@ Para sanar esses obstáculos, o BSON foi inventado.
 
 Representação binária para guardar dados no formato JSON. Otimizado para velocidade, espaço e flexibilidade. A estrutura binária do BSON **codifica as informações de tipo e comprimento**, o que permite que sejam analisadas muito mais rapidamente. Além disso, oferece suporte a outros tipos de dados mais completos.
 
-![Representação de um documento BSON](BSON%20&%20Collection%208fe1d7f107724f1b81c71537446d39af/Untitled%202.png)
-
-Representação de um documento BSON
-
 ---
 
 # JSON *vs* BSON
 
 Com certeza ambos são muito semelhantes. A principal diferença entre eles é o suporte a tipos de dados mais sofisticados pelo BSON. A linguagem JavaScript não diferencia números inteiros e números de ponto flutuante, por exemplo.
-
-![Quadro comparativo entre os formatos JSON e BSON](BSON%20&%20Collection%208fe1d7f107724f1b81c71537446d39af/Untitled%203.png)
-
-Quadro comparativo entre os formatos JSON e BSON
 
 ---
 
@@ -119,8 +106,6 @@ Nessa abordagem, os relacionamentos são estruturados utilizando objetos embutid
 ### *Document References*
 
 Nessa estratégia, os relacionamentos são estruturados por referências a objetos entre diferentes *collections*. Parecido com o que vemos nos bancos relacionais.
-
-![Untitled](BSON%20&%20Collection%208fe1d7f107724f1b81c71537446d39af/Untitled%204.png)
 
 ```json
 // collection *movie*
