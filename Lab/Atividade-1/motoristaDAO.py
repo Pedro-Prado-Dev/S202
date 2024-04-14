@@ -1,23 +1,39 @@
 from database import Database
 from motorista import Motorista
+from corrida import Corrida
+from typing import List
 
 class MotoristaDAO:
     def __init__(self, database: Database):
         self.db = database
 
-    def criar_motorista(self, motorista: Motorista):
+    def criar_motorista(self, motorista: Motorista, corridas: List[Corrida]):
         try:
-            self.db.connect()
-            self.db.collection.insert_one({
+            motorista_data = {
                 "nome": motorista.nome,
-                "corridas": [],  # Inicialmente, sem corridas
+                "corridas": [],
                 "nota": motorista.nota
-            })
+            }
+            
+            corridas_data = []
+            for corrida in corridas:
+                corrida_data = {
+                    "nota": corrida.nota,
+                    "distancia": corrida.distancia,
+                    "valor": corrida.valor,
+                    "passageiro": {
+                        "nome": corrida.passageiro.nome,
+                        "documento": corrida.passageiro.documento
+                    }
+                }
+                corridas_data.append(corrida_data)
+
+            motorista_data["corridas"] = corridas_data
+            
+            self.db.collection.insert_one(motorista_data)
             print(f"Motorista {motorista.nome} criado com sucesso!")
         except Exception as e:
             print(f"Erro ao criar motorista: {e}")
-        finally:
-            self.db.disconnect()
 
     def ler_motorista(self, nome: str) -> Motorista:
         try:
