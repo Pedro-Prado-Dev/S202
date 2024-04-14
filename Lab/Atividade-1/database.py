@@ -1,8 +1,4 @@
-from typing import Collection
-import pymongo # pip install pymongo
-from dataset import dataset
-
-
+import pymongo
 class Database:
     def __init__(self, database, collection):
         self.connect(database, collection)
@@ -20,10 +16,14 @@ class Database:
         except Exception as e:
             print(e)
 
-    def resetDatabase(self):
+    def resetDatabase(self, dataset):
         try: 
             self.db.drop_collection(self.collection)
             self.collection.insert_many(dataset)
             print("Banco de dados resetado com sucesso!")
         except Exception as e:
             print(e)
+
+    def disconnect(self):
+        self.clusterConnection.close()
+        print("Desconectado do banco de dados com sucesso!")
