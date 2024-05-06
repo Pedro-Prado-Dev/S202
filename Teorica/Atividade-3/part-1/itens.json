@@ -1,0 +1,75 @@
+[{
+    "_id": {
+      "$oid": "65f8a0cd9f286b271147d665"
+    },
+    "nomeItem": "Poção de cura",
+    "preco": 250,
+    "pesoEmKG": 0.3,
+    "volume": 1,
+    "tipo": "item magico",
+    "efeito": ["Cura","Vigor"]
+  },
+  {
+    "_id": {
+        "$oid": "65f8a0cd9f286b271147d666"
+      },
+      "nomeItem": "Poção de Mana",
+      "preco": 300,
+      "pesoEmKG": 0.3,
+      "volume": 1,
+      "tipo": "item magico",
+      "efeito": ["Mana","Eficas"]
+  },
+  {
+    "_id": {
+        "$oid": "65f8a0cd9f286b271147d667"
+      },
+      "nomeItem": "Mochila de Viajem",
+      "preco": 1000,
+      "pesoEmKG": 2,
+      "volume": 2,
+      "capacidadePeso": 200,
+      "capacidadeVolume": 100,
+      "tipo":"inventario"
+  },
+  {
+    "_id": {
+        "$oid": "65f8a0cd9f286b271147d668"
+      },
+      "nomeItem": "Mochila de Base",
+      "preco": 200,
+      "pesoEmKG": 2,
+      "volume": 1,
+      "capacidadePeso": 90,
+      "capacidadeVolume": 30,
+      "tipo":"inventario"
+  },
+  {
+    "_id": {
+        "$oid": "65f8a0cd9f286b271147d669"
+      },
+      "nomeItem": "Espada Grande",
+      "preco": 600,
+      "pesoEmKG": 20,
+      "volume": 10,
+      "tipo":"arma",
+      "atributos":{
+        "classe":"guerreiro",
+        "dano": 1000
+      }
+  },
+  {
+    "_id": {
+        "$oid": "65f8a0cd9f286b271147d670"
+      },
+      "nomeItem": "arco magico",
+      "preco": 600,
+      "pesoEmKG": 12,
+      "volume": 7,
+      "tipo":"arma",
+      "atributos":{
+        "classe":"ladrão",
+        "dano": 600
+      }
+  }
+]
