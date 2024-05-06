@@ -1,0 +1,52 @@
+Prova_1_Parte_2_Comandos 
+
+Comando para criar um container neo4j 
+docker run --restart always --publish=7474:7474 --publish=7687:7687 --env NEO4J_AUTH=none -d neo4j:5.18.0
+
+
+CREATE (:Mundo {nome: "FlorestaNegra", desc: "Mundo dos elfos"})
+CREATE (:Mundo {nome: "Submundo", desc: "Mundo dos demonios"})
+CREATE (:Mundo {nome: "TerraMedia", desc: "Mundo dos humanos e anoes"})
+
+
+CREATE (:Pagina {titulo: "Elfos", desc: "Na Floresta Negra onde elfos e elfos renegados estao em guerra"})
+CREATE (:Pagina {titulo: "Demonios", desc: "No lar dos demonios aventuras para derrotar diablo e os 5 reis do submundo"})
+CREATE (:Pagina {titulo: "Humanos", desc: "Na TerraMedia humanos prosperam porem um mal esta por vir"})
+
+
+CREATE (:Personagem {nome: "Legolas", idade: 200, habilidades:["arcoFlecha","ladrao"], profissao:"ladino",cultura:"Ynaia"})
+CREATE (:Personagem {nome: "Mestre dos Magos", idade: 500, habilidades:["magia","sumir"], profissao:"academico",cultura:"eban"})
+CREATE (:Personagem {nome: "Merlin", idade: 100, habilidades:["magia","cunjuração"], profissao:"canalizador",cultura:"eron"})
+
+
+MATCH (a:Personagem {nome: "Legolas"}), (b:Pessoa {nome: "Mestre dos Magos"})
+CREATE (a)-[:AMIGO_DE]->(b)
+
+MATCH (a:Personagem {nome: "Mestre dos Magos"}), (b:Pessoa {nome: "Legolas"})
+CREATE (a)-[:AMIGO_DE]->(b)
+
+MATCH (a:Personagem {nome: "Mestre dos Magos"}), (b:Pessoa {nome: "Merlin"})
+CREATE (a)-[:MESTRE_DE]->(b)
+
+MATCH (a:Personagem {nome: "Mestre dos Magos"}), (b:Pessoa {nome: "Merlin"})
+CREATE (b)-[:DICIPULO_DE]->(a)
+
+MATCH (a:Personagem {nome: "Mestre dos Magos"}), (b:Mundo {nome: "Submundo"})
+CREATE (a)-[:MORA_EM]->(b)
+
+MATCH (a:Personagem {nome: "Legolas"}), (b:Mundo {nome: "FlorestaNegra"})
+CREATE (a)-[:MORA_EM]->(b)
+
+MATCH (a:Personagem {nome: "Merlin"}), (b:Mundo {nome: "TerraMedia"})
+CREATE (a)-[:MORA_EM]->(b)
+
+MATCH (a:Personagem {nome: "Legolas"}), (b:Pagina {titulo: "Elfos"})
+CREATE (a)-[:CONHECE]->(b)
+
+
+MATCH (a:Personagem {nome: "Merlin"}), (b:Pagina {titulo: "Humanos"})
+CREATE (a)-[:CONHECE]->(b)
+
+MATCH (a:Personagem {nome: "Mestre dos Magos"}), (b:Pagina {titulo: "Submundo"})
+CREATE (a)-[:CONHECE]->(b)
+
