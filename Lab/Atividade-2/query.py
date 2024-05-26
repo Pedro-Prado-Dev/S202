@@ -37,7 +37,7 @@ class Queries:
         return self.db.execute_query(query)
 
 if __name__ == "__main__":
-    db = Database("bolt://localhost:7687", "neo4j", "password")
+    db = Database("bolt://localhost:7687")
     queries = Queries(db)
     print(queries.query1_1())
     print(queries.query1_2())
